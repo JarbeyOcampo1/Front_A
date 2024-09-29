@@ -18,6 +18,7 @@ function Clientes () {
         try {
             const response = await axios.get('http://localhost:8080/api/clientes');
             setCliente(response.data);
+            console.log(response.data)
         } catch (error) {
             console.log ('Error a cargar clientes: ',error);
         }
@@ -26,7 +27,7 @@ function Clientes () {
     //crear actualizar
     const CreateorUpdateCliente = async (clienteData) =>{
         if (editingCliente) {
-            await axios.put(`http://localhost:8080/api/clientes/${editingCliente.id}`,clienteData);
+            await axios.put(`http://localhost:8080/api/clientes/${editingCliente.clienteID}`,clienteData);
         } else {
             await axios.post(`http://localhost:8080/api/clientes`,clienteData);
         }
@@ -40,9 +41,15 @@ function Clientes () {
     };
 
     //eliminar
-    const handleDeleteCliente = async (clienteId) => {
-        await axios.delete(`http://localhost:8080/api/clientes/${clienteId}`);
-        fetchCliente ();
+    const handleDeleteCliente = async (clienteID) => {
+        try {
+            console.log("ID del cliente a eliminar:", clienteID);  // Verifica la ID
+            await axios.delete(`http://localhost:8080/api/clientes/${clienteID}`);
+            fetchCliente();  // Actualiza la lista de clientes
+        } catch (error) {
+            console.error('Error al eliminar cliente:', error);
+            alert('Error al eliminar el cliente.');
+        }
     };
 
     return (

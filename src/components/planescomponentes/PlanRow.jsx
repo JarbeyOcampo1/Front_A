@@ -5,7 +5,7 @@ const PlanRow = ({plane,onEdit,onDelete}) => {
     };
 
     const handleDelete = () => {
-        onDelete(plane.id);
+        onDelete(plane.planID);
     };
         
 

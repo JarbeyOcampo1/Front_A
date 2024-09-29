@@ -15,7 +15,7 @@ const PlanTable = ({planes,onEdit,onDelete}) => {
             </thead>
             <tbody>
                 {planes.map((plane)=>(
-                    <PlanRow key={plane.id} plane={plane} onEdit={onEdit} onDelete={onDelete}/>
+                    <PlanRow key={plane.planID} plane={plane} onEdit={onEdit} onDelete={onDelete}/>
                 ))}
             </tbody>
         </table>

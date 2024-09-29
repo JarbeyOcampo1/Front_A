@@ -25,7 +25,7 @@ function Planes() {
     //crear actualizar planes
     const handleCreateOrUpdatePlane = async(planeData) => {
         if (editingPlanes) {
-            await axios.put(`http://localhost:8080/api/planes/${editingPlanes.id}`,planeData)
+            await axios.put(`http://localhost:8080/api/planes/${editingPlanes.planID}`,planeData)
         } else {
             await axios.post(`http://localhost:8080/api/planes`,planeData)
         }
@@ -39,8 +39,8 @@ function Planes() {
     };
 
     //eliminar cliente a partir id 
-    const handleDeletePlane = async (planeId) => {
-        await axios.delete(`http://localhost:8080/api/planes/${planeId}`);
+    const handleDeletePlane = async (planID) => {
+        await axios.delete(`http://localhost:8080/api/planes/${planID}`);
         fetchPlanes();
     };
 

@@ -1,6 +1,6 @@
 import ClienteRow from "./ClienteRow";
 
-const ClienteTable =({clientes =[],onEdit,onDelete}) =>{
+const ClienteTable =({clientes,onEdit,onDelete}) =>{
 
     return (
         <table>
@@ -15,7 +15,7 @@ const ClienteTable =({clientes =[],onEdit,onDelete}) =>{
           </thead>
           <tbody>
             {clientes.map((cliente) => (
-              <ClienteRow key={cliente.id} cliente={cliente} onEdit={onEdit} onDelete={onDelete} />
+              <ClienteRow key={cliente.clienteID} cliente={cliente} onEdit={onEdit} onDelete={onDelete} />
             ))}
           </tbody>
         </table>
