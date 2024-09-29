@@ -13,7 +13,7 @@ function Clientes () {
         fetchCliente ()
     },[]);
 
-    //recorrer y retonar planes
+    //recorrer y retonar clientes
     const fetchCliente = async() => {
         try {
             const response = await axios.get('http://localhost:8080/api/clientes');

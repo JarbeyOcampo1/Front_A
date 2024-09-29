@@ -6,7 +6,10 @@ function Principal () {
             <h1>Direcciones</h1>
 
             <Link to="/planes"> Ver planes del Gimnasio </Link>
+            <br/>
             <Link to="/clientes"> Ver Clientes </Link>
+            <br/>
+            <Link to="/logins"> Ver Logins</Link>
         </>
     )
 }
