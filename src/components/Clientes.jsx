@@ -2,6 +2,9 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import ClienteTable from "./clientescomponentes/ClienteTable";
 import ClienteForm from "./clientescomponentes/ClienteForm";
+import './css/Clientes.css'; 
+import { Link } from "react-router-dom";
+
 
 function Clientes () {
 
@@ -55,6 +58,8 @@ function Clientes () {
     return (
         <div>
             <h1>Cliente</h1>
+            <Link className="home-button" to="/">Inicio</Link>
+            
             <br />
             <ClienteTable clientes={cliente} onEdit={handleEditCliente} onDelete={handleDeleteCliente} />
             <h3>{editingCliente ? 'Editar cliente' : 'Crear cliente'}</h3>
