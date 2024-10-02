@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import PlanTable from "./planescomponentes/PlanTable";
 import PlanesForm from "./planescomponentes/PlanesForm";
+import { Link } from "react-router-dom";
 
 
 function Planes() {
@@ -48,6 +49,7 @@ function Planes() {
         <div className="Planes">
             <h1> Planes del Gimnasio</h1>
             <br/>
+            <Link className="home-button" to="/">Inicio</Link>
             <h2>Lista Planes</h2>
             <PlanTable planes={planes} onEdit={handleEditPlane} onDelete={handleDeletePlane} />
             <h3>{editingPlanes ? 'Editar plan' : 'Crear plan'}</h3>
