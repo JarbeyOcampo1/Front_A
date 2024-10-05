@@ -4,6 +4,7 @@ import Principal from './components/Principal';
 import Planes from './components/Planes';
 import Clientes from './components/Clientes';
 import Login from './components/Login';
+import IngresarP from './components/IngresarP';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 
   return <BrowserRouter>
       <Routes>
+        <Route path="/IngresarP" element={<IngresarP/>}/>
         <Route index path='/' element={<Principal/>}/>
         <Route path='/planes' element={<Planes/>}/>
         <Route path='/clientes' element={<Clientes/>}/>
